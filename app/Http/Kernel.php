@@ -38,6 +38,17 @@ class Kernel extends HttpKernel
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
 
+        'employee' => [
+            'web',
+            'auth:employee', // Use the 'employee' guard
+        ],
+    
+        'admin' => [
+            'web',
+            'auth:admin', // Use the 'admin' guard
+        ],
+    
+
         'api' => [
             // \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
             \Illuminate\Routing\Middleware\ThrottleRequests::class.':api',
